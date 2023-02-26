@@ -1,5 +1,10 @@
 # Frontend Mentor - Results summary component solution
 
+![GitHub language count](https://img.shields.io/github/languages/count/fidellim/Result-Summary-Component-FEM)
+![GitHub top language](https://img.shields.io/github/languages/top/fidellim/Result-Summary-Component-FEM)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/fidellim/Result-Summary-Component-FEM)
+![GitHub last commit](https://img.shields.io/github/last-commit/fidellim/Result-Summary-Component-FEM)
+
 This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
@@ -31,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution]()
-- Live Site URL: [Live Site]()
+- Solution URL: [Solution](https://github.com/fidellim/Result-Summary-Component-FEM)
+- Live Site URL: [Live Site](https://result-summary-component-fem-fidellim.netlify.app/)
 
 ## My process
 
