@@ -1,30 +1,95 @@
 <script>
-	export let name;
+	import data from './data.json';
+	import AttributeList from './components/AttributeList.svelte';
+	
+	const totalScore = data.reduce((total, num) => {
+		return num.score + total
+	}, 0)
+	const totalAvg = parseInt(totalScore / data.length);
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<div class="resultContainer">
+		<h2>Your Result</h2>
+		<div class="circle">
+			<h1>{totalAvg}</h1>
+			of 100
+		</div>
+		<div>
+			<h3>Great</h3>
+			<p>Your scored higher than 65% of the people who have taken these tests.</p>
+		</div>
+	</div>
+	<div class="summaryContainer">
+		<p class="summary__title">Summary</p>
+		<AttributeList attributes={data} />
+		<button>Continue</button>
+	</div>
 </main>
 
 <style>
-	main {
+	.resultContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		background: rgb(46,43,233);
+		background: linear-gradient(0deg, rgba(46,43,233,1) 0%, rgba(120,87,255,1) 100%);
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		padding: 1.25rem 2rem 2rem 2rem;
+		border-bottom-left-radius: 25px;
+		border-bottom-right-radius: 25px;
+	}
+	.resultContainer h2 {
+		font-size: .95rem;
+		color: var(--lightLavender);
+	}
+	.resultContainer h3 {
+		font-size: 1rem;
+		margin-bottom: .5rem;
+		color: var(--white);
+	}
+	.resultContainer p {
+		font-size: .85rem;
+		color: var(--lightLavender);
+		max-width: 250px;
 		margin: 0 auto;
 	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	.circle {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background: rgb(78,33,202);
+		background: linear-gradient(0deg, rgba(78,33,202,1) 0%, rgba(36,33,202,1) 20%);
+		margin: 0 auto;
+		font-size: .75rem;
+		color: var(--lightLavender);
 	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.circle h1 {
+		font-size: 2.5rem;
+		color: var(--white);
+	}
+	.summaryContainer {
+		padding: 1.25rem;
+	}
+	.summary__title {
+		font-weight: 600;
+		color: var(--darkGrayBlue);
+		margin-bottom: 1.15rem;
+	}
+	button {
+		background-color: var(--darkGrayBlue);
+		color: var(--white);
+		border: 0;
+		border-radius: 25px;
+		width: 100%;
+		font-size: 1rem;
+		font-weight: 600;
+		font-family: "Hanken Grotesk";
+		padding: .9rem;
+		margin-top: 1.25rem;
 	}
 </style>
