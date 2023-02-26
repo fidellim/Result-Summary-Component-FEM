@@ -9,21 +9,23 @@
 </script>
 
 <main>
-	<div class="resultContainer">
-		<h2>Your Result</h2>
-		<div class="circle">
-			<h1>{totalAvg}</h1>
-			of 100
+	<div class="results-component">
+		<div class="resultContainer">
+			<h2>Your Result</h2>
+			<div class="circle">
+				<h1>{totalAvg}</h1>
+				of 100
+			</div>
+			<div>
+				<h3>Great</h3>
+				<p>Your scored higher than 65% of the people who have taken these tests.</p>
+			</div>
 		</div>
-		<div>
-			<h3>Great</h3>
-			<p>Your scored higher than 65% of the people who have taken these tests.</p>
+		<div class="summaryContainer">
+			<p class="summary__title">Summary</p>
+			<AttributeList attributes={data} />
+			<button>Continue</button>
 		</div>
-	</div>
-	<div class="summaryContainer">
-		<p class="summary__title">Summary</p>
-		<AttributeList attributes={data} />
-		<button>Continue</button>
 	</div>
 </main>
 
@@ -91,5 +93,52 @@
 		font-family: "Hanken Grotesk";
 		padding: .9rem;
 		margin-top: 1.25rem;
+		cursor: pointer;
+	}
+	button:hover {
+		background: linear-gradient(0deg, rgba(46,43,233,1) 0%, rgba(120,87,255,1) 100%);
+	}
+	
+	@media (min-width: 650px) {
+		main {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.results-component {
+			display: flex;
+			border-radius: 25px;
+			overflow: hidden;
+			max-width: 600px;
+			width: 600px;
+			box-shadow: var(--paleBlue) 0px 7px 29px 0px;
+		}
+		.resultContainer {
+			flex: 1.5;
+			border-radius: 25px;
+			padding: 1.25rem 2rem 0rem 2rem;
+		}
+		.summaryContainer {
+			flex: 2;
+		}
+		.circle {
+			width: 150px;
+		}
+		.circle h1 {
+			font-size: 3.5rem;
+		}
+		.resultContainer h2 {
+			font-size: 1.25rem;
+		}
+		.resultContainer h3 {
+			font-size: 1.5rem;
+		}
+		.resultContainer p {
+			max-width: 200px;
+		}
+		button {
+			padding: .65rem;
+		}
 	}
 </style>
